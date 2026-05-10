@@ -142,3 +142,74 @@ else:
 
 #--->14 Write a Python Program to Check Prime Number
 
+num = int(input("ENTER YOU'R NUMBER :- "))
+flag = False
+if num <= 1:
+    flag = True
+elif num > 1:
+    for i in range(2,num):
+        if num%i==0:
+            flag = True
+            break
+else:
+    flag = False
+if flag:
+    print(f"{num} is NOT prime")
+else:
+    print(f"{num} is PRIME")
+
+#--> 15 Write a Python Program to Print all Prime Numbers in an Interval of 1-10
+
+lower = 1
+upper = 10
+only_prime_num = []
+
+for num in range(lower,upper+1):
+    if num > 1:
+        for i in range(2,num):
+            if num%i==0:
+                break
+        else:
+            only_prime_num.append(num)
+print(only_prime_num)
+
+# --> 16 Write a Python Program to Find the Factorial of a Number.
+
+num = int(input("Enter number :- "))
+factorial = 1
+if num < 0:
+    print(f"{num} negative number ka factorial nahi nikal sakta ")
+elif num == 0:
+    print(f"{num} ka factorial 1 hai")
+else:
+    for i in range(1,num+1):
+        factorial = factorial*i
+print(f"{num} ka factorial hai {factorial}")
+
+# --> 17 Write a Python Program to Display the multiplication Table
+
+table_num = int(input("Enter number of table :- "))
+for i in range(1,11):
+    print(f"{table_num} X {i} = {table_num*i}")
+
+# --> 18. Write a Python Program to Print the Fibonacci sequence
+
+n_terms = int(input("kitne terms tak aapko sequence chahiye :- "))
+n1 = 0
+n2 = 1
+count = 0
+if n_terms <= 0:
+    print("please possitive number dale")
+elif n_terms == 1:
+    print(f"fibonacci sequence up to {n_terms}")
+else:
+    print("fibonacci squence")
+    while count < n_terms:
+        print(n1)
+        nth = n1+n2
+        n1 = n2
+        n2 = nth
+        count += 1
+
+# -->19. Write a Python Program to Check Armstrong Number
+

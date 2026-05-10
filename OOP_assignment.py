@@ -236,3 +236,4 @@ print(f"Total Bill: ₹{total_amount}")
 # Payment process
 payment_service = UPI()
 print(payment_service.pay(total_amount))
+
