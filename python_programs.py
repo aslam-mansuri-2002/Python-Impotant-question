@@ -212,4 +212,46 @@ else:
         count += 1
 
 # -->19. Write a Python Program to Check Armstrong Number
+num = int(input("Enter number :-"))
+num_order = len(str(num))
+sum_total = 0
+tem_num = num
+
+while 0 < tem_num:
+    digit = tem_num%10
+    digit = digit**num_order
+    sum_total += digit
+    tem_num = tem_num//10
+
+if num == sum_total:
+    print(f"{num} is Armstrong number")
+else:
+    print(f"{num} is NOT Armstrong")
+
+# --> 20 Write a Python Program to Find Armstrong Number in an Interval
+
+starting_num = int(input("Enter Starting number :- ")) 
+ending_num = int(input("Enter Ending number :- "))
+
+for num in range(starting_num,ending_num+1):
+    num_order = len(str(num))
+    sum_total = 0
+    tem_num = num
+    while 0 < tem_num:
+        digit = tem_num%10
+        digit = digit**num_order
+        sum_total += digit
+        tem_num = tem_num//10
+    if num == sum_total:
+        print(f"{num} is Armstrong")
+
+# -->21. Write a Python Program to Find the Sum of Natural Numbers.
+
+n = int(input("Enter the limit :- "))
+if n < 1:
+    print(f"{n} not allowd , please enter upper to 1")
+else:
+    # n*(n+1)/2 aa ak sutar se badha nutral number nu sum karva mate
+    sum_n = n*(n+1)//2 
+    print(sum_n)
 
