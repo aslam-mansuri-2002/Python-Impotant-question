@@ -255,3 +255,158 @@ else:
     sum_n = n*(n+1)//2 
     print(sum_n)
 
+# --> 22 Write a Python Program to Find LCM
+
+x = int(input("Enter X number :- "))
+y = int(input("Enter Y number :- "))
+
+if x > y:
+    greater = x
+else:
+    greater = y
+
+while True:
+    if greater%x==0 and greater%y==0:
+        lcm = greater
+        break
+    greater += 1
+
+print(f"{x} and {y} ka LCM hai {lcm}")
+
+# --> 23 Write a Python Program to Find HCF
+
+x = int(input("Enter X value :- "))
+y = int(input("Enter Y value :- "))
+
+if x>y:
+    smaller = x
+else:
+    smaller = y
+
+for i in range(1,smaller+1):
+    if x%i==0 and y%i==0:
+        hcf = i
+
+print(f"{x} and {y} ka HCF hai {hcf}")
+
+# --> 24 Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal
+
+dec_num = int(input("Enter you'r number :- "))
+print(f"Decimal number {dec_num}")
+print(f"Binary number {bin(dec_num)}")
+print(f"Octal number {oct(dec_num)}")
+print(f"Hexadecimal number {hex(dec_num)}")
+
+# ---> 25 Write a Python Program To Find ASCII value of a character
+
+char = str(input("Enter the character: "))  
+print("The ASCII value of '" + char + "' is", ord(char))
+
+# -->  26 Write a Python Program to Make a Simple Calculator with 4 basic mathematical
+# operations.
+
+def add(x,y):
+    return x+y
+def subtract(x,y):
+    return x-y
+def multiply(x,y):
+    return x*y
+def divide(x,y):
+    return x/y
+
+'''Select operation 
+1 = Add
+2 = Subtract
+3 = Multiply
+4 = Divide
+'''
+
+while True:
+    choice = input("Enter choice (1/2/3/4) :- ")
+    if choice in ('1','2','3','4'):
+        try:
+            num1 = float(input("Enter Frist number :- "))
+            num2 = float(input("Enter Seconde number :-"))
+        except ValueError:
+            print("Invalid input , please enter number")
+            continue
+        if choice == "1":
+            print(f"{num1} + {num2} = {add(num1,num2)}")
+        elif choice == "2":
+            print(f"{num1} - {num2} = {subtract(num1,num2)}")
+        elif choice == "3":
+            print(f"{num1} * {num2} = {multiply(num1,num2)}")
+        elif choice == "4":
+            if num2 != 0:
+                print(f"{num1} / {num2} = {divide(num1,num2)}")
+            else:
+                print("aap zero se divition nahi kar sakte")
+        next = input("Redy for next calculation ? (YES/NO) :- ").lower()
+        if next == "no":
+            break
+    else:
+        print("invalid Input")
+
+# --> 27  Write a Python Program to Display Fibonacci Sequence Using Recursion
+
+n_terms = int(input("Enter you'r terms :- "))
+
+def reco_fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return (reco_fibonacci(n-1) + reco_fibonacci(n-2))
+
+if n_terms <= 0:
+    print("Please enter possitive number ")
+else:
+    for i in range(n_terms):
+        print(reco_fibonacci(i))
+
+# --> 28 Write a Python Program to Find Factorial of Number Using Recursion
+
+num = int(input("Enter the number :- "))
+
+def reco_factorial(n):
+    if n <= 1:
+        return n
+    else:
+        return n * reco_factorial(n-1)
+
+if num < 0:
+    print("possitive number dale")
+else:
+    print(f"{num} ka factorial hai {reco_factorial(num)}")
+
+# --> 29 Write a Python Program to calculate your Body Mass Index.
+
+weight = float(input("Apna weight (kg mein) enter karein: "))
+height_cm = float(input("Apna height (cm mein) enter karein: "))
+
+# 2. Height ko CM se Meter mein badalna (kyunki formula meter mangta hai)
+height_m = height_cm / 100
+
+
+bmi = weight / (height_m ** 2)
+
+print(f"Aapka BMI hai: {round(bmi, 2)}")
+
+if bmi < 18.5:
+    print("Aap 'Underweight' hain. Thoda achha khana khaiye!")
+elif 18.5 <= bmi < 24.9:
+    print("Badhiya! Aapka weight ekdum 'Normal' hai.")
+elif 25 <= bmi < 29.9:
+    print("Aap 'Overweight' hain. Thodi exercise shuru karein.")
+else:
+    print("Aap 'Obese' (kafi zyada weight) ki category mein hain.")
+
+# --> 30 Write a Python Program to calculate the natural logarithm of any number.
+
+import math
+num = float(input("Enter a number: "))
+
+if num <= 0:
+    print("Please enter a positive number.")
+else:
+    result = math.log(num)
+    print(f"The natural logarithm of {num} is: {round(result,4)}")
