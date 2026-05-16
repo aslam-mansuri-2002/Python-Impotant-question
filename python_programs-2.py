@@ -263,6 +263,70 @@ if my_num % num_sum == 0:
 else:
     print(f"{my_num} ek Harshad number nahi hai")
 
-# --> Write a Python program to print all pronic numbers between 1 and 100
-'''Pronic number wo hota hai jisme aap kisi integer n ko uske next integer (n+1) se multiply karte hain. Agar aapko apne original number ke barabar result milta hai, toh wo number pronic number hota hai. jese ki 6 ek pronic number hai kyunki 2 x 3 = 6, aur 2 aur 3 consecutive integers hain.'''
+# -->48 Write a Python program to print all pronic numbers between 1 and 100
+'''Pronic number wo hota hai jisme aap kisi integer n ko uske next integer (n+1) se multiply karte hain. Agar aapko apne original number ke barabar result milta hai, toh wo number pronic number hota hai. jese ki 6 ek pronic number hai kyunki 2 x 3 = 6, aur 2 aur 3 consecutive integers hain. iska ak formula hota hai n*(n+1)'''
+
+for num in range(1,101):
+    pronic_num = num*(num+1)
+    if pronic_num < 100:
+        print(pronic_num)
+
+# --> 49 sum of list elements
+my_list = [1,2,3,4,5]
+total_sum = 0
+for i in my_list:
+    total_sum += i
+
+# --> 50 Write a Python program to Multiply all numbers in the list
+my_list = [1,2,3,4,5]
+total_product = 1
+for i in my_list:   
+    total_product *= i 
+print(total_product)
+
+# --> 51 Write a Python program to find smallest number in a list.
+numbers = [30, 10, -45, 5, 20]
+smallest = numbers[0]
+for i in numbers:
+    if i < smallest:
+        smallest = i
+print(f"{numbers} ke andar smallest number {smallest} hai")
+
+# --> 52 Write a Python program to find  largest number in a list.
+numbers = [30, 10, -45, 5, 20]
+big_num = numbers[0]
+for i in numbers:
+    if i > big_num:
+        big_num = i
+print(f"{numbers} ke andar largest number {big_num} hai")
+
+# --> 53 Write a Python program to find second largest number in a list.
+numbers = [30,30,10,11,50]
+frist_largest = second_largest = float('-inf')
+for i in numbers:
+    if i > frist_largest:
+        second_largest = frist_largest
+        frist_largest = i
+    elif i > second_largest and i != frist_largest:
+        second_largest = i
+print(f"{numbers} ke andar second largest number {second_largest} hai") 
+
+# -> 54 Write a Python program to find N largest elements from a list
+n = 3
+num = [30, 10, 45, 5, 20, 99, 8]
+unique_num = list(set(num))
+unique_num.sort(reverse=True)
+n_num = unique_num[:n]
+print(f"{num} ke andar {n} largest number {n_num} hai")
+
+# --> 55 Write a Python program to print even numbers in a list
+numbers = [30, 10, 45, 5, 20, 99, 8]
+even_numbers = [i for i in numbers if i%2==0]
+print(even_numbers)
+
+# --> 56 Write a Python program to print odd numbers in a List
+
+numbers = [30, 10, 45, 5, 20, 99, 8]
+odd_numbers = [i for i in numbers if i%2!=0]
+print(odd_numbers)
 
