@@ -7,3 +7,216 @@ else:
     cube_sum = sum([i**3 for i in range(1,n+1)])
     print(cube_sum)
 
+# -->32 Write a Python Program to find sum of array
+
+arr = [1,2,3]
+print(sum(arr))
+
+# -> for loop ke sath
+total_sum = 0
+for i in arr:
+    total_sum += i
+print(total_sum)
+
+
+# --> 33 Write a Python Program to find largest element in an array
+my_arr = [10,20,99,30]
+largest_num = my_arr[0]
+
+for i in my_arr:
+    if i > largest_num:
+        largest_num = i
+print(f"{my_arr} ke andar largest number {largest_num} hai")
+
+# --> 34 Write a Python Program for array rotation
+
+def rotate_arr(my_list,d):
+    n = len(my_list)
+    d = d%n
+    rotate_arr = my_list[d:]+my_list[:d]
+    return rotate_arr
+my_arr = [1,2,3,4,5]
+rotate_arr(my_arr,6)
+
+# --> 35 Write a Python Program to Split the array and add the first part to the end
+
+def split_arr(my_list,d):
+    n = len(my_list)
+    d = d%n
+    frist = my_list[:d]
+    seconde = my_list[d:]
+    result =  seconde + frist
+    return result
+
+my_arr = [10,20,30,40,50]
+split_arr(my_arr,9)
+
+# --> 36  Write a Python Program to check if given array is Monotonic
+
+'''Pehle iska matlab samajhte hain. Monotonic ka matlab hota hai ki array ya to sirf badh raha hai (Increasing) ya sirf ghat raha hai (Decreasing). Beech mein rasta badalna mana hai!
+exp--> [1,2,3,3,4,5]--> monotonic hai
+exp --> [5,4,3,3,1] --> monotonic hai
+exp --> [1,5,2,1,9] --> monotonic nahi hai '''
+
+def is_monotonic(arr):
+    increasing = decreasing = True
+
+    for i in range(len(arr)-1):
+        if arr[i] < arr[i+1]:
+            decreasing = False
+        elif arr[i] > arr[i+1]:
+            increasing = False
+    
+    if increasing or decreasing:
+        print(f"{arr} monotonic hai")
+    else:
+        print(f"{arr} monotonic nahi hai")
+
+my_arr = [1,2,3,3,7,5]
+print(is_monotonic(my_arr))
+
+# --> 37 Write a Python Program to Add Two Matrices.
+'''Pehle samajhte hain ki matrix kya hota hai. Matrix ek 2D array hota hai, jisme rows aur columns hote hain. Jab hum do matrices ko add karte hain, toh hum unke corresponding elements ko add karte hain.
+exp -->
+Matrix A: [[1, 2], [3, 4]]
+Matrix B: [[5, 6], [7, 8]]
+Matrix C (A + B): [[6, 8], [10, 12]]'''
+
+# Matrix X (Size: 3 Rows, 3 Columns)
+X = [
+    [1, 2, 3],  # Row 0
+    [4, 5, 6],  # Row 1
+    [7, 8, 9]   # Row 2
+]
+
+# Matrix Y (Size: 3 Rows, 3 Columns)
+Y = [
+    [9, 8, 7],  # Row 0
+    [6, 5, 4],  # Row 1
+    [3, 2, 1]   # Row 2
+]
+
+# Ek khali matrix jawab store karne ke liye (Shuruat mein sab 0 hai)
+result = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# 1. Bahar wala loop (Rows ke liye)
+for i in range(len(X)):  # len(X) = 3, to i chalega 0, 1, 2
+    
+    # 2. Andar wala loop (Columns ke liye)
+    for j in range(len(X[0])):  # len(X[0]) = 3, to j chalega 0, 1, 2
+        
+        # Aamne-saamne wale elements ko jod rahe hain
+        result[i][j] = X[i][j] + Y[i][j]
+
+# Jawab dekhne ke liye
+for row in result:
+    print(row)
+
+# --> 38 Write a Python Program to Multiply Two Matrices.
+'''Matrix multiplication thoda alag hota hai. Jab hum do matrices ko multiply karte hain, toh hum pehle matrix ke rows ko dusre matrix ke columns ke saath multiply karte hain aur unka sum nikalte hain.'''
+
+# Matrix X (Size: 3x3)
+X = [
+    [1, 2],
+    [4, 5],
+    [7, 8]
+]
+
+# Matrix Y (Size: 2x3)
+Y = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+# Jawab store karne ke liye khali matrix (Size: 3x3)
+result = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# 1. Pehla Loop: X ki Rows ke liye
+for i in range(len(X)):
+    # 2. Doosra Loop: Y ke Columns ke liye
+    for j in range(len(Y[0])):
+        # 3. Teesra Loop: Multiplication ke liye (Common size)
+        for k in range(len(Y)):
+            result[i][j] = result[i][j] + (X[i][k] * Y[k][j])
+
+# Jawab Print karne ke liye
+print("Matrices ka Multiplication hai:")
+for row in result:
+    print(row)
+
+# --> 39 Write a Python Program to Transpose a Matrix
+'''Matrix ka transpose karna matlab hota hai ki uske rows aur columns ko swap kar dena. Matlab, jo pehle row tha, wo ab column ban jayega, aur jo pehle column tha, wo ab row ban jayega.'''
+
+# Original Matrix (3 Rows, 2 Columns)
+X = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+
+result = [
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+for i in range(len(X)):     
+    for j in range(len(X[0])):   
+        result[j][i] = X[i][j]
+
+print("Matrix ka Transpose hai:")
+for row in result:
+    print(row)
+
+# --> 40 Write a Python Program to Sort Words in Alphabetic Order
+sentence = input("Enter a sentence :")
+a = sentence.split()
+a.sort()
+shorted_sentence = " ".join(a)
+print(shorted_sentence)
+
+# --> 41 Write a Python Program to Remove Punctuation From a String
+'''Punctuation marks jaise ki comma (,), period (.), exclamation mark (!), question mark (?), aur aise hi aur bhi symbols hote hain jo humare sentences mein hote hain. Jab hum punctuation ko remove karte hain, toh hum in symbols ko apne string se hata dete hain, taki sirf words bache.'''
+
+import string
+def remove_punctuation(input_string):
+    symbols = string.punctuation
+    result = "".join(char for char in input_string if char not in symbols)
+    return result
+
+remove_punctuation("!!aslam# mansuri , how@@ are you????/ ")
+
+# -> 42 is balnk
+
+# -> 43 Write a Python program to check if the given number is a Disarium Number
+'''Disarium number wo hota hai jisme har digit ka position ke hisab se power nikal ke unka sum original number ke barabar hota hai jes ki 135 ek disarium number hai kyunki 1^1 + 3^2 + 5^3 = 135'''
+
+num1 = int(input("Enter a number :"))
+numtostr = str(num1)
+total_sum = 0
+for i,d in enumerate(numtostr):
+    total_sum += int(d)**(i+1)
+
+if total_sum == num1:
+    print(f"{num1} ek Disarium number hai")
+else:
+    print(f"{num1} ek Disarium number nahi hai")
+
+# --> 44 Write a Python program to print all disarium numbers between 1 to 100
+
+for i in range(1,101):
+    convert_num = str(i)
+    total_sum = 0
+    for p,d in enumerate(convert_num):
+        total_sum += int(d)**(p+1)
+    if total_sum == i:
+        print(i)
+
+# --> 45  
