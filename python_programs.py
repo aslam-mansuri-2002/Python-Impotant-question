@@ -410,3 +410,5 @@ if num <= 0:
 else:
     result = math.log(num)
     print(f"The natural logarithm of {num} is: {round(result,4)}")
+
+    

@@ -219,4 +219,50 @@ for i in range(1,101):
     if total_sum == i:
         print(i)
 
-# --> 45  
+# --> 45  Write a Python program to check if the given number is Happy Number
+'''Happy number wo hota hai jisme aap us number ke digits ka square nikal ke unka sum karte hain, aur phir us sum ka bhi digits ka square nikal ke unka sum karte hain, aise hi process repeat karte hain. Agar aapko 1 milta hai, toh wo number happy number hota hai. Agar aapko 4 milta hai, toh wo number unhappy number hota hai.'''
+
+def chek_happy_number(num):
+    
+    original_num = num
+    num_list = []
+
+    while num != 1 and num not in num_list:
+        num_list.append(num)
+        num = sum(int(digit)**2 for digit in str(num))
+    if num == 1:
+        print(f"{original_num} ek Happy number hai")
+    else:
+        print(f"{original_num} ek Happy number nahi hai")
+
+chek_happy_number(19)
+
+# --> 46 Write a Python program to print all happy numbers between 1 and 100
+
+num_1to100 = [num for num in range(1,101)]
+
+for num in num_1to100:
+    num_set = set()
+    ori_num = num
+    while num != 1 and num not in num_set:
+        num_set.add(num)
+        num = sum(int(d)**2 for d in str (num))
+    if num == 1:
+        print(ori_num)
+        
+# --> 47 Write a Python program to determine whether the given number is a Harshad
+# Number.
+
+'''Harshad number wo hota hai jisme aap us number ke digits ka sum nikal ke us original number ko us sum se divide karte hain. Agar division ka result ek integer hota hai, toh wo number Harshad number hota hai.jese ki 18 ek harshad number hai kyunki 1 + 8 = 9 aur 18 ko 9 se divide karne par result 2 aata hai, jo ek integer hai. in short, agar aapka number apne digits ke sum se perfectly divide ho jata hai, toh wo Harshad number hai.'''
+
+my_num = int(input("Enter a number :"))
+
+num_sum = sum(int(d) for d in str(my_num))
+if my_num % num_sum == 0:
+    print(f"{my_num} ek Harshad number hai")
+else:
+    print(f"{my_num} ek Harshad number nahi hai")
+
+# --> Write a Python program to print all pronic numbers between 1 and 100
+'''Pronic number wo hota hai jisme aap kisi integer n ko uske next integer (n+1) se multiply karte hain. Agar aapko apne original number ke barabar result milta hai, toh wo number pronic number hota hai. jese ki 6 ek pronic number hai kyunki 2 x 3 = 6, aur 2 aur 3 consecutive integers hain.'''
+
