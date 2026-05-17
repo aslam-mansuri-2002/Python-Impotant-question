@@ -408,3 +408,81 @@ def chek_binary_str(a):
 chek_binary_str("55652")
 chek_binary_str("0001110101")
 
+# -->64 Write a Python program to find uncommon words from two Strings.
+
+str1 = "aslam mansuri is learning python"
+str2 = "aslam khan is learning javascript"
+
+set1 = set(str1.split())
+set2 = set(str2.split())
+
+uncommon_words = set1^set2
+print(f"uncommon word : {uncommon_words}")
+
+# -> 65 Write a Python program to find all duplicate characters in string.
+
+str1 = "aslammansuri"
+duplicate_char = []
+for i in str1:
+    if str1.count(i) > 1 and i not in duplicate_char:
+        duplicate_char.append(i)
+print(duplicate_char)
+
+# -> 66 Write a Python Program to check if a string contains any special character
+
+def chek_special_char(str1):
+    has_special = False
+    for i in str1:
+        if not i.isalnum() and i != " ":
+            has_special = True
+            break
+    if has_special:
+        print(f"{str1} me special character hai")
+    else:
+        print(f"{str1} me special character nahi hai")
+
+chek_special_char("aslam_mansuri")
+
+# --> 67 Write a Python program to Extract Unique dictionary values
+
+my_dict = {
+    "a": 10,
+    "b": 20,
+    "c": 10,
+    "d": 30
+}
+
+unique_values = []
+
+for i in my_dict.values():
+    if i not in unique_values:
+        unique_values.append(i)
+print(unique_values)
+
+# --> 68 Write a Python program to find the sum of all items in a dictionary
+my_dict = {
+    "a": 10,
+    "b": 20,
+    "c": 10,
+    "d": 30
+}
+
+total_sum = 0
+for i in my_dict.values():
+    total_sum += i
+print(total_sum)
+
+# --> 69 Write a Python program to Merging two Dictionaries.
+
+dict1 = {
+    "a": 10,
+    "b": 20
+}
+dict2 = {
+    "c": 30,
+    "d": 40
+}
+merged_dict = {**dict1, **dict2}
+print(merged_dict)
+
+
