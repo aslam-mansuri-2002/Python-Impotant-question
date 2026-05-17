@@ -330,3 +330,81 @@ numbers = [30, 10, 45, 5, 20, 99, 8]
 odd_numbers = [i for i in numbers if i%2!=0]
 print(odd_numbers)
 
+# --> 57 Write a Python program to Remove empty List from List.
+
+
+list_of_lists = [[1, 2, 3], [], [4, 5], [], [6, 7, 8], []]
+cleaned_list = [l for l in list_of_lists if l]
+print(f"Original list: {list_of_lists} and cleaned list: {cleaned_list}")
+
+# --> 58 Write a Python program to Cloning or Copying a list.
+
+original_list = [1,2,3,4]
+copy_list = original_list[:]
+copy_list.append(5)
+print(f"Original list: {original_list} and copy list: {copy_list}")
+
+# agr ham sirf = ka use kaege to copy nahi hoga 
+list1 = [1,2,3,4]
+list2 = list1
+list2.append(5)
+print(f"yaha pe farak nahi hoga kyunki list1 aur list2 dono same list ko point kar rahe hain, toh original list bhi change ho jayegi. Original list: {list1} and copy list: {list2}")
+
+# -> 59 Write a Python program to Count occurrences of an element in a list.
+
+my_list = [1,1,2,3,4,1,5,2]
+target = 1
+count = 0
+# with for loop
+for i in my_list:
+    if i == target:
+        count += 1
+print(f"{my_list} ke andar {target} ki occurrences {count} hai")
+
+# shortcut with count method
+print(my_list.count(target))
+
+# -> 60 Write a Python program to find words which are greater than given length k.
+
+words_list = ["aslam", "mansuri", "python", "programming", "is", "fun"]
+k = 5
+k_length_word = [w for w in words_list if len(w) > k]
+print(f"original list: {words_list} and words greater than {k} length: {k_length_word}")
+
+# -> 61 Write a Python program for removing iℎ𝑖 character from a string.
+'''sawal ka matlab hai ki aapko ek string di jayegi aur aapko us string ke iℎ𝑖 character ko remove karna hai. Matlab, agar aapko string "hello world" di gayi hai aur i = 4, toh aapko 4th index (0-based indexing) pe jo character hai usko remove karna hai.'''
+
+my = "mansuri"
+i = 3
+t1 = my[:i]
+t2 = my[i+1:]
+print(f"original str {my} and result str {t1+t2}")
+
+# -> 62 Write a Python program to split and join a string
+
+str = 'i am aslam mansuri and i am learning python'
+str_list = str.split()
+again_str = " ".join(str_list)
+
+print(f"real str : {str}")
+print(f"{"-"*30} after use split and join {"-"*30}")
+print(f"str list : {str_list}")
+print(f"again str : {again_str}")
+
+# --> 63 Write a Python program to check if a given string is binary string or not
+
+def chek_binary_str(a):
+    allowed = "01"
+    is_binary = True
+    for i in a:
+        if i not in allowed:
+            is_binary = False
+            break
+    if is_binary:
+        print(f"{a} ek binary string hai")
+    else:
+        print(f"{a} ek binary string nahi hai")
+
+chek_binary_str("55652")
+chek_binary_str("0001110101")
+
