@@ -485,4 +485,19 @@ dict2 = {
 merged_dict = {**dict1, **dict2}
 print(merged_dict)
 
+# --> 70 Write a Python program to convert key-values list to flat dictionary.
+
+key_values_list = [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+flat_dict = {k: v for k,v in key_values_list}
+print(flat_dict)
+
+# --> 71 Write a Python program to insertion at the beginning in OrderedDict.
+from collections import OrderedDict
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+od.move_to_end('b', last=False)
+print(od)
+
+
+
 
