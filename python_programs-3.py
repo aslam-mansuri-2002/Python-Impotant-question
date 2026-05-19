@@ -146,3 +146,106 @@ for p in passwords_list:
 valid_password_str = ",".join(valid_password)
 print(f"\nvalid passwords are:- {valid_password_str}")
 
+# --> 81 Define a class with a generator which can iterate the numbers, which are divisible by
+# 7, between a given range 0 and n
+
+class DivisibleBySeven:
+    def __init__(self,n):
+        self.n = n
+    def generate(self):
+        for i in range(self.n+1):
+            if i % 7 == 0:
+                yield i
+
+ob = DivisibleBySeven(50)
+for j in ob.generate():
+    print(j)
+
+# --> 82 Write a program to compute the frequency of the words from the input. The output
+# should output after sorting the key alphanumerically. Suppose the following input is
+# supplied to the program:
+# New to Python or choosing between Python 2 and Python 3? Read Python 2 or
+# Python 3.
+
+'''Then, the output should be:
+2:2 - 3.:1 - 3?:1 - New:1 - Python:5 - Read:1 - and:1 - between:1 - choosing:1 - or:2 - to:1'''
+
+input_str = "New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3."
+word_record = {}
+for w in input_str.split():
+    if w in word_record:
+        word_record[w] += 1
+    else:
+        word_record[w] = 1
+
+word_record = dict(sorted(word_record.items()))
+print(word_record)
+
+# --> 83 Define a class Person and its two child classes: Male and Female. All classes have a
+# method "getGender" which can print "Male" for Male class and "Female" for Female
+# class
+
+class Person:
+    def getGender(self):
+        pass
+class Male(Person):
+    def getGender(self):
+        return "Male"
+class Female(Person):
+    def getGender(self):
+        return "Female"
+
+boy = Male()
+boy.getGender()
+girl = Female()
+girl.getGender()
+
+# --> 84 Please write a program to generate all sentences where subject is in ["I", "You"] and
+# verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
+
+subjects = ["I" , "You" ]
+verbs = ["Play", "Love"]
+objects = ["Hockey","Football"]
+
+for i in subjects:
+    for j in verbs:
+        for k in objects:
+            print(f"{i} {j} {k}")
+
+# --> 85 Please write a program to compress and decompress the string "hello world!hello
+# world!hello world!hello world!"
+
+'''zlib ak module hai jo data compression aur decompression ke liye use hota hai. Hum is module ka use karke string ko compress karenge aur phir usko decompress karenge.'''
+
+import zlib
+
+my_str = b"hello world!hello world!hello world!hello world!"
+print(my_str)
+compressed_str = zlib.compress(my_str)
+print(compressed_str)
+decompressed_str = zlib.decompress(compressed_str)
+print(decompressed_str)
+
+# --> 86 Please write a binary search function which searches an item in a sorted list. The
+# function should return the index of element to be searched in the list
+
+def binary_search(arr,target):
+    sorted_arr = sorted(arr)
+    low = 0
+    high = len(sorted_arr)-1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if sorted_arr[mid] == target:
+            return target
+        elif sorted_arr[mid] < target:
+            low = mid +1
+        else:
+            high = mid - 1
+    
+    return -1
+
+my_list = [1, 3, 6, 7, 4, 5,2]
+print(binary_search(my_list, 4))
+
+
