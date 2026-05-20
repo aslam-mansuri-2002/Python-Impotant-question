@@ -248,4 +248,81 @@ def binary_search(arr,target):
 my_list = [1, 3, 6, 7, 4, 5,2]
 print(binary_search(my_list, 4))
 
+# --> 87 Please write a program using generator to print the numbers which can be divisible
+# by 5 and 7 between 0 and n in comma separated form while n is input by console.
+'''sawal ka matlab hai ki hum ek generator function banayenge jo 0 se n ke beech ke numbers ko generate karega jo 5 aur 7 dono se divisible honge. Phir hum un numbers ko comma separated form mein print karenge.'''
+
+def divi_5and7(n):
+    for i in range(n+1):
+        if i % 5 == 0 and i % 7 == 0:
+            yield i
+
+n = int(input("Enter a number:-"))
+result = ",".join(str(i) for i in divi_5and7(n))
+print(result)
+
+# --> 88 Please write a program using generator to print the even numbers between 0 and n in
+# comma separated form while n is input by console
+
+def get_even_numbers(n):
+    for i in range(1,n+1):
+        if i % 2 == 0:
+            yield i
+
+n = int(input("Enter n number:-"))
+all_even_num = ",".join(str(i) for i in get_even_numbers(n))
+print(all_even_num)
+
+# --> 89 Please write a program using list comprehension to print the Fibonacci Sequence in
+# comma separated form with a given n input by console
+
+def get_fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return get_fibonacci(n-1) + get_fibonacci(n-2)
+    
+n = int(input("Enter n number:-"))
+fib = ",".join(str(get_fibonacci(i)) for i in range(n))
+print(fib)
+
+# --> 90 Assuming that we have some email addresses in the
+'''
+username@companyname.com
+(mailto:username@companyname.com)" format,
+please write program to print the user name of a given email address. Both user
+names and company names are composed of letters only.'''
+
+email = "aslam@gmail.com"
+username = email.split("@")[0]
+print(username)
+
+# -> 91 Define a class named Shape and its subclass Square. The Square class has an init
+# function which takes a length as argument. Both classes have an area function which
+# can print the area of the shape where Shape's area is 0 by default
+
+'''sawal ka matlab hai ki hum ek Shape class banayenge jisme area function hoga jo 0 return karega. Phir hum Square class banayenge jo Shape class ka subclass hoga, jisme init function hoga jo length ko argument ke roop mein lega. Square class ka area function length ka square return karega.'''
+
+class Shape:
+    def __init__(self):
+        pass
+    def area(self):
+        return 0
+class Square(Shape):
+    def __init__(self, Length):
+        self.Length = Length
+    def area(self):
+        return self.Length ** 2
+    
+Shape_obj = Shape()
+print(Shape_obj.area())
+Square_obj = Square(2)
+print(Square_obj.area())
+
+# --> 92 Write a function that stutters a word as if someone is struggling to read it. The first
+# two letters are repeated twice with an ellipsis ... and space after each, and then the
+# word is pronounced with a question mark ? 
+
 
