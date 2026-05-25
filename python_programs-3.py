@@ -325,4 +325,28 @@ print(Square_obj.area())
 # two letters are repeated twice with an ellipsis ... and space after each, and then the
 # word is pronounced with a question mark ? 
 
+def sutter(w):
+    kat = w[0:2]
+    output = f"{kat}...{kat}...{w}"
+    return output
+
+sutter("mansuri")
+
+# ---> 93 Create a function that takes an angle in radians and returns the corresponding angle
+# in degrees rounded to one decimal place
+
+import math
+
+def redians_to_deg(r):
+    deg = r * (180/math.pi)
+    return round(deg,1) 
+
+redians_to_deg(1)
+redians_to_deg(566)
+
+# ---> 94 In this challenge, establish if a given integer num is a Curzon number. If 1 plus 2
+# elevated to num is exactly divisible by 1 plus 2 multiplied by num, then num is a
+# Curzon number.
+# Given a non-negative integer num, implement a function that returns True if num is a
+# Curzon number, or False otherwise
 
