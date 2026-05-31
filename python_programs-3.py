@@ -350,3 +350,93 @@ redians_to_deg(566)
 # Given a non-negative integer num, implement a function that returns True if num is a
 # Curzon number, or False otherwise
 
+def is_curzon(num):
+    # Pehla dabba: Python me 2**num ka matlab hota hai 2 ko num baar multiply karna
+    pehla_dabba = 1 + (2 ** num)
+    
+    # Doosra dabba: 2 ko num se multiply kiya aur 1 plus kiya
+    doosra_dabba = 1 + (2 * num)
+    
+    # % 0 ka matlab: Kya pehla dabba doosre se poora kat kar 0 bacha?
+    if pehla_dabba % doosra_dabba == 0:
+        return True
+    else:
+        return False
+    
+a = is_curzon(5)
+print(a)
+if a == True:
+    print("5 is a Curzon number")
+else:
+    print("5 is not a Curzon number")
+
+# --> 95 Given the side length x find the area of a hexagon
+
+import math
+def area_of_hexagon(x):
+    if x <= 0:
+        return 0
+    area = (3 * math.sqrt(3) * (x ** 2)) / 2
+    return round(area, 2)
+
+print(area_of_hexagon(2))
+print(area_of_hexagon(3))
+
+# --> 96 Create a function that returns a base-2 (binary) representation of a base-10 (decimal)
+# string number. To convert is simple: ((2) means base-2 and (10) means base-10)
+# 010101001(2) = 1 + 8 + 32 + 128.
+# Going from right to left, the value of the most right bit is 1, now from that every bit to
+# the left will be x2 the value, value of an 8 bit binary numbers are (256, 128, 64, 32, 16,
+# 8, 4, 2, 1).
+'''sawal ka matlab hai ki hum ek function banayenge jo base-10 number ko base-2 (binary) representation mein convert karega. Hum is conversion ke liye built-in bin() function ka use kar sakte hain, jo decimal number ko binary string mein convert karta hai.'''
+
+def decimal_to_binary(n):
+    num = int(n)
+    bin_num = bin(num)
+    pure_bin = bin_num[2:]
+    return pure_bin
+
+print(decimal_to_binary(96))
+
+# --> 97 Create a function that takes three arguments a, b, c and returns the sum of the
+# numbers that are evenly divided by c from the range a, b inclusive.
+
+def evenly_divided(a,b,c):
+    total_sum = sum([i for i in range(a,b+1) if i%c==0])
+    return total_sum
+
+print(evenly_divided(1,10,2))
+
+# --> 98 Create a function that returns True if a given inequality expression is correct and
+# False otherwise.
+'''Examples
+correct_signs("3 < 7 < 11") 
+➞ True
+correct_signs("13 > 44 > 33 <1") 
+➞ False
+correct_signs("1 < 2 < 6 < 9 > 3") 
+➞ True'''
+
+def correct_signs(expre):
+    return eval(expre) #eval() yah function str ko asli maths ki tara samjga
+
+print(correct_signs("5+5+2-2")) # yaha pe gine ga
+print(correct_signs("3<7<11")) # yaha pe dekhe ga true hai ya false
+print(correct_signs("13>44>33<1"))
+
+# --> 99 Create a function that replaces all the vowels in a string with a specified character
+
+'''replace_vowels("the aardvark", "#") 
+➞ "th# ##rdv#rk"
+replace_vowels("minnie mouse", "?") 
+➞ "m?nn?? m??s?"
+replace_vowels("shakespeare", "*") 
+➞ "shkspr*'''
+
+def rep_vow_with_speChar(w,sp):
+    vowels = "aeiouAEIOU"
+    my_list = [sp if i in vowels else i for i in w]
+    return "".join(my_list)
+
+print(rep_vow_with_speChar("Mansuri","*"))
+
