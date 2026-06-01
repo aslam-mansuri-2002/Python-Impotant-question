@@ -440,3 +440,96 @@ def rep_vow_with_speChar(w,sp):
 
 print(rep_vow_with_speChar("Mansuri","*"))
 
+# --> 100 Write a function that calculates the factorial of a number recursively
+
+def factorial(n):
+    # Base Case: Agar n 0 ya 1 ho jaye, toh chupchaap 1 return kar do (Yahan rukna hai)
+    if n == 0 or n == 1:
+        return 1
+        
+    # Recursive Case: Khud ko hi waapas bulaya par ek number kam karke (n - 1)
+    return n * factorial(n - 1)
+
+# --- CHALO CENTURY WALE CODE KO TEST KARTE HAIN ---
+print("5 ka Factorial:", factorial(5))   # Output: 120
+print("3 ka Factorial:", factorial(3))   # Output: 6
+print("0 ka Factorial:", factorial(0))   # Output: 1
+
+
+# --> Program 101
+'''Hamming distance is the number of characters that differ between two strings.
+To illustrate:
+String1: "abcbba"
+String2: "abcbda"
+Hamming Distance: 1 - "b" vs. "d" is the only difference.
+Create a function that computes the hamming distance between two strings.
+Examples
+hamming_distance("abcde", "bcdef") 
+➞ 5
+hamming_distance("abcde", "abcde") 
+➞ 0
+hamming_distance("strong", "strung") 
+➞ 1'''
+
+str1 = input("Enter Frist word :- ").lower()
+str2 = input("Enter seconde word :-").lower()
+
+if len(str1) == len(str2):
+    total_hamming_dis = sum([1 for s1,s2 in zip(str1,str2) if s1 != s2])
+    print(f"total hamming distance hai {total_hamming_dis}")
+else:
+    print("aapke ke diye gaye dono word ki lenth sem nahi hai")
+
+# --> 102 Create a function that takes a list of non-negative integers and strings and return a
+# new list without the strings
+'''Examples
+filter_list([1, 2, "a", "b"]) 
+➞ [1, 2]
+filter_list([1, "a", "b", 0, 15]) 
+➞ [1, 0, 15]'''
+
+
+def filter_list(mix_list):
+    print(f"you'r original list {mix_list}")
+    fil_list = [i for i in mix_list if isinstance(i,int) and i>=0]
+    return f"you'r filter list {fil_list}" 
+
+filter_list([1,2,"a","2",3,"b"])
+
+# --> 103 The "Reverser" takes a string as input and returns that string in reverse order, with
+# the opposite case
+'''reverse("Hello World") 
+reverse("ReVeRsE") 
+➞ "DLROw OLLEh"
+➞ "eSrEvEr"
+reverse("Radar") 
+➞ "RADAr"'''
+
+def reverse(my_str):
+    rev_str = my_str[::-1].swapcase()
+    return rev_str
+
+reverse("Aslam")
+
+#--> 104 not show
+#--> question reperet 
+
+# --> 106 Write a function that moves all elements of one type to the end of the list
+
+'''Examples
+move_to_end([1, 3, 2, 4, 4, 1], 1) 
+➞ [3, 2, 4, 4, 1, 1]
+Move all the 1s to the end of the array.
+move_to_end([7, 8, 9, 1, 2, 3, 4], 9) 
+➞ [7, 8, 1, 2, 3, 4, 9]
+move_to_end(["a", "a", "a", "b"], "a") 
+➞ ["b", "a", "a", "a"]'''
+
+def move_to_end(lst,target):
+    part1 = [i for i in lst if i != target]
+    part2 = [i for i in lst if i == target]
+    return part1+part2
+
+move_to_end(["a","a","a","b"],"a")
+move_to_end([1,3,2,4,4,1],3)
+
