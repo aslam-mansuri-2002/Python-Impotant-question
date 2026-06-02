@@ -533,3 +533,44 @@ def move_to_end(lst,target):
 move_to_end(["a","a","a","b"],"a")
 move_to_end([1,3,2,4,4,1],3)
 
+# --> 107 Create a function that takes a string and returns a string in which each character is
+# repeated once
+'''Examples
+double_char("String") 
+➞ "SSttrriinngg"
+double_char("Hello World!") 
+➞ "HHeelllloo WWoorrlldd!!"
+double char("1234! ") 
+➞ "11223344!! '''
+
+def double_char(input_str):
+    double_str = ""
+
+    for i in input_str:
+        double_str += i*2
+
+    return double_str
+
+double_char("aslam")
+double_char("mansuri")
+
+# --> 108 Create a function that reverses a boolean value and returns the string "boolean
+# expected" if another variable type is given.
+'''Examples
+reverse(True) 
+➞ False
+reverse(False) 
+➞ True
+reverse(0) 
+➞ "boolean expected"
+reverse(None) 
+➞ "boolean expected"'''
+
+def reverse(value):
+    if isinstance(value,bool):
+        return not value
+    else:
+        return "boolean expected"
+    
+reverse(True)
+reverse("aslam")
