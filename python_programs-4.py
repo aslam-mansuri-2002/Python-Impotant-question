@@ -247,3 +247,65 @@ def society_name(name_lst):
 
 society_name(["Aslam","Rahil","Shahrukh","Masud"])
 
+# --> 125 An isogram is a word that has no duplicate letters. Create a function that takes a
+# string and returns either True or False depending on whether or not it's an "isogram"
+'''is_isogram("Algorism") ➞ True
+is_isogram("PasSword") ➞ False- Not case sensitive.
+is_isogram("Consecutive") ➞ False
+Notes
+Ignore letter case (should not be case sensitive).
+All test cases contain valid one word strings'''
+
+def is_isogram(word):
+    lower_word = word.lower()
+    return len(lower_word) == len(set(lower_word))
+
+is_isogram("Algorism")
+is_isogram("PasSword")
+
+# --> 126 Create a function that takes a string and returns True or False, depending on whether
+# the characters are in order or not.
+'''is_in_order("abc") ➞ True
+is_in_order("edabit") ➞ False
+is_in_order("123") ➞ True
+is_in_order("xyzz") ➞ True'''
+
+def is_in_order(txt):
+    return txt == "".join(sorted(txt))
+
+is_in_order("abc")
+is_in_order("edabit")
+
+# --> 127 Create a function that takes a number as an argument and returns True or False
+# depending on whether the number is symmetrical or not. A number is symmetrical
+# when it is the same as its reverse
+'''Examples
+is_symmetrical(7227) ➞ True
+is_symmetrical(12567) ➞ False
+is_symmetrical(44444444) ➞ True
+is_symmetrical(9939) ➞ False
+is_symmetrical(1112111) ➞ True'''
+
+def is_symme(n):
+    txt = str(n)
+    return txt == txt[::-1]
+is_symme(7227)
+
+# --> 128 Given a string of numbers separated by a comma and space, return the product of
+# the numbers
+'''Examples
+multiply_nums("2, 3") ➞ 6
+multiply_nums("1, 2, 3, 4") ➞ 24
+multiply_nums("54, 75, 453, 0") ➞ 0
+multiply_nums("10, -2") ➞ -20'''
+
+def multiply_num(txt):
+    num_lst = txt.split(",")
+    product = 1
+    for i in num_lst:
+        product *= int(i)
+    return product
+
+multiply_num("2,3")
+multiply_num("1,2,3,4")
+
