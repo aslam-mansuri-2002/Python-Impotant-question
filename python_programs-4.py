@@ -228,3 +228,22 @@ simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]) ➞ False
 Notes:- Both input lists will be of the same length, and will have a minimum length of 2.- The values of the 0-indexed element in the second list and the n-1th indexed
 element in the first list do not matter'''
 
+def simon_says(lst1,lst2):
+    return lst1[:-1]==lst2[1:]
+
+simon_says([1,2],[5,5])
+simon_says([1,2,3],[3,5,6]) #<--
+simon_says([1,2,3,4,5],[0,1,2,3,4])
+
+# --> 124 A group of friends have decided to start a secret society. The name will be the first
+# letter of each of their names, sorted in alphabetical order. Create a function that takes
+# in a list of names and returns the name of the secret society
+
+'''society_name(["Adam", "Sarah", "Malcolm"]) ➞ "AMS"
+society_name(["Harry", "Newt", "Luna", "Cho"]) ➞ "CHLN"'''
+
+def society_name(name_lst):
+    return "".join(sorted([i[0] for i in name_lst]))
+
+society_name(["Aslam","Rahil","Shahrukh","Masud"])
+
