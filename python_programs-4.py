@@ -309,3 +309,50 @@ def multiply_num(txt):
 multiply_num("2,3")
 multiply_num("1,2,3,4")
 
+# --> 129 Create a function that squares every digit of a number
+'''Examples
+square_digits(9119) ➞ 811181
+square_digits(2483) ➞ 416649
+square_digits(3212) ➞ 9414
+Notes
+The function receives an integer and must return an integer'''
+
+def square_digits(num):
+    result = ""
+    for i in str(num):
+        sq = int(i)**2
+        result += str(sq)
+
+    return int(result)
+    
+square_digits(9191)
+square_digits(3212)
+
+# --> 130 Create a function that sorts a list and removes all duplicate items from it
+'''setify([1, 3, 3, 5, 5]) ➞ [1,3,5]  
+setify([4, 4, 4, 4]) ➞ [4]
+setify([5, 7, 8, 9, 10, 15]) ➞ [5, 7, 8, 9, 10, 15]
+setify([3, 3, 3, 2, 1]) ➞ [1, 2, 3]'''
+
+def setify(lst):
+    return list(set(sorted(lst)))
+
+setify([3,3,3,2,1])
+setify([1,3,3,5,5])
+
+# --> 131 Create a function that returns the mean of all digits
+'''Examples
+mean(42) ➞ 3
+mean(12345) ➞ 3
+mean(666) ➞ 6
+The mean of all digits is the sum of digits / how many digits there are (e.g. mean
+of digits in 512 is (5+1+2)/3(number of digits) = 8/3=2).
+The mean will always be an integer'''
+
+def mean(num):
+    total_sum = sum([int(i) for i in str(num)])
+    return total_sum//len(str(num))
+
+mean(42)
+mean(12345)
+
