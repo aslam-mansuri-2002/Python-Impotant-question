@@ -492,3 +492,43 @@ def dict_to_list(d):
 
 dict_to_list({"d":1,"b":2,"c":3})
 
+# --> 139 Write a function that creates a dictionary with each (key, value) pair being the (lower
+# case, upper case) versions of a letter, respectively
+'''mapping(["a", "b", "c"]) ➞ { "a": "A", "b": "B", "c": "C" }
+mapping(["a", "v", "y", "z"]) ➞ { "a": "A", "v": "V", "y": "Y", "z": "Z" }
+Notes
+All of the letters in the input list will always be lowercase.'''
+
+def mapping(lst):
+    return {i:i.upper() for i in lst}
+
+mapping(["a","b","c"])
+
+# --> 140 Write a function, that replaces all vowels in a string with a specified vowel
+'''Examples
+vow_replace("apples and bananas", "u") ➞ "upplus und bununus" 
+vow_replace("cheese casserole", "o") ➞ "chooso cossorolo"
+vow_replace("stuffed jalapeno poppers", "e") ➞ "steffed jelepene peppers"
+Notes
+All words will be lowercase. Y is not considered a vowel.'''
+
+def vow_replace(txt,v):
+    vowels = "aeiou"
+    result = "".join([v if i in vowels else i for i in txt ])
+    return result
+
+vow_replace("apples and mango","u")
+
+# --> 141 Create a function that takes a string as input and capitalizes a letter if its ASCII code
+# is even and returns its lower case version if its ASCII code is odd.
+'''Examples
+ascii_capitalize("to be or not to be!") ➞ "To Be oR NoT To Be!"
+ascii_capitalize("THE LITTLE MERMAID") ➞ "THe LiTTLe meRmaiD"
+ascii_capitalize("Oh what a beautiful morning.") ➞ "oH wHaT a BeauTiFuL moRNiNg."'''
+
+def ascii_capitalize(txt):
+    return "".join([i.upper() if ord(i)%2==0 else i.lower() for i in txt])
+
+ascii_capitalize("to be or not to be")
+ascii_capitalize("my name is aslam mansuri")
+
